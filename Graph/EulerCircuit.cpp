@@ -10,7 +10,7 @@ bool judge_EulerCircuit(int n, vector<vector<int>>& edge) {
         }
     }
     for (int i = 0; i < n; i++) {
-        if (count[i]%2) return false;
+        if (count[i]&1) return false;
     } return true;
 }
 
