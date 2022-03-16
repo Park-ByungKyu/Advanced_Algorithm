@@ -19,13 +19,12 @@ int SCC(int s) {
     }
     if (state == discovered[s]) {
         vector<int> onescc;
-        int t = -1;
-        while (t != s) {
-            t = stk.top(); stk.pop();
+        while (true) {
+            int t = stk.top(); stk.pop();
             finished[t] = true;
             onescc.push_back(t);
+            if (t == s) break;
         }
-        scc.push_back(onescc);
     }
     return state;
 }
