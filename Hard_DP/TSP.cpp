@@ -8,7 +8,7 @@ int main() {
     int m = (1<<n);
     int dist[n][n];
     for (int i = 0; i < n; i++) {
-	    for (int j = 0; j < n; j++) cin >> dist[i][j];
+	for (int j = 0; j < n; j++) cin >> dist[i][j];
     } 
     int dp[m][n];
     int visit[m];
