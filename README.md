@@ -3,18 +3,18 @@
 This Advanced algorithm Base codes aim at accuracy and versatility.
 
 📁 Graph
-+  [Euler Circuit](https://github.com/Park-ByungKyu/Advanced_Algorithm/blob/main/Graph/EulerCircuit.cpp)
-+  [Strongly Connected Component](https://github.com/Park-ByungKyu/Advanced_Algorithm/blob/main/Graph/SCC.cpp)
++  [Euler Circuit](https://github.com/ggyuchive/Advanced_Algorithm/blob/main/Graph/EulerCircuit.cpp)
++  [Strongly Connected Component](https://github.com/ggyuchive/Advanced_Algorithm/blob/main/Graph/SCC.cpp)
 
 
 📁 Hard_DP
-+  [Traveling Salesman Problem](https://github.com/Park-ByungKyu/Advanced_Algorithm/blob/main/Hard_DP/TSP.cpp)
++  [Traveling Salesman Problem](https://github.com/ggyuchive/Advanced_Algorithm/blob/main/Hard_DP/TSP.cpp)
 +  State, Digit DP
 
 
 📁 Query
-+  [Segment Tree](https://github.com/Park-ByungKyu/Advanced_Algorithm/blob/main/Query/Segtree.cpp)
-+  [Lazy Segment Tree](https://github.com/Park-ByungKyu/Advanced_Algorithm/blob/main/Query/LazySegtree.cpp)
++  [Segment Tree](https://github.com/ggyuchive/Advanced_Algorithm/blob/main/Query/Segtree.cpp)
++  [Lazy Segment Tree](https://github.com/ggyuchive/Advanced_Algorithm/blob/main/Query/LazySegtree.cpp)
 +  Mo's Algorithm
 
 
