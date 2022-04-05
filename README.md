@@ -19,7 +19,7 @@ This Advanced algorithm Base codes aim at accuracy and versatility.
 
 
 📁 Divide and Conquer Technique
-+  Optimizing Numerical Power
++  [Optimizing Numerical Power](https://github.com/ggyuchive/Advanced_Algorithm/blob/main/DivideConquerTech/Fast_Power.cpp)
 +  Optimizing Matrix Power
 +  Optimizing Lowest Common Ancestor
 +  Optimizing Dynamic Programming
