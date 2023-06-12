@@ -5,18 +5,14 @@ typedef long long ll;
 vector<ll> arr;
 vector<ll> tree;
 
-int getindex(int index, ll upd, int l, int r, int ret) {
-    if (l == r) {tree[ret] = upd; return ret;}
-    int m = (l+r)/2;
-    if (index <= m) return getindex(index, upd, l, m, 2*ret);
-    else return getindex(index, upd, m+1, r, 2*ret+1);
-}
-
-void update(int treeind) {
-    if (!treeind) return;
-    if (!(treeind&1)) tree[treeind/2] = tree[treeind]+tree[treeind+1];
-    else tree[treeind/2] = tree[treeind]+tree[treeind-1];
-    update(treeind/2);
+void update(int treeind, ll upd) {
+    tree[treeind] = upd;
+    while (treeind>1) {
+        if (!(treeind&1)) tree[treeind/2] = tree[treeind]+tree[treeind+1];
+        else tree[treeind/2] = tree[treeind]+tree[treeind-1];
+        treeind/=2;
+    }
+    return;
 }
 
 ll query(int s, int e, int l, int r, int treeind) {
@@ -35,11 +31,15 @@ int main() {
     cin >> n >> m >> k;
     arr.resize(n,0);
     tree.resize(4*n,0);
+
+    int startidx = 1;
+    while (startidx < n) {
+        startidx *= 2;
+    }
     
     for (int i = 0; i < n; i++) {
-        ll p; cin >> p;
-        update(getindex(i,p,0,n-1,1));
-        arr[i]=p;
+        cin >> arr[i];
+        update(startidx+i, arr[i]);
     }
     
     ll a,b,c;
@@ -50,7 +50,7 @@ int main() {
             arr[b] = c;
         } else {
             c--;
-            cout << query(b, c, 0, n-1, 1) << '\n';
+            cout << query(b, c, 0, startidx-1, 1) << '\n';
         }
     }
 }  
