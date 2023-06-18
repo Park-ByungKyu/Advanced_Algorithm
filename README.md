@@ -12,11 +12,11 @@ This Advanced algorithm Base codes aim at accuracy and versatility.
 +  State, Digit DP
 
 
-📁 Query
+📁 Querys
 +  [Segment Tree](https://github.com/ggyuchive/Advanced_Algorithm/blob/main/Query/Segtree.cpp)
 +  [Lazy Segment Tree](https://github.com/ggyuchive/Advanced_Algorithm/blob/main/Query/LazySegtree.cpp)
 +  Mo's Algorithm
-+  [Sparse Tree](https://github.com/ggyuchive/Advanced_Algorithm/blob/main/Query/SparseTree.cpp)
++  [Sparse Table](https://github.com/ggyuchive/Advanced_Algorithm/blob/main/Query/SparseTree.cpp)
 +  [LCA](https://github.com/ggyuchive/Advanced_Algorithm/blob/main/Query/LCA.cpp)
 
 
