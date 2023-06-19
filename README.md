@@ -5,22 +5,28 @@ This Advanced algorithm Base codes aim at accuracy and versatility.
 📁 Graph
 +  [Euler Circuit](https://github.com/ggyuchive/Advanced_Algorithm/blob/main/Graph/EulerCircuit.cpp)
 +  [Strongly Connected Component](https://github.com/ggyuchive/Advanced_Algorithm/blob/main/Graph/SCC.cpp)
-
++  Cut Vertex/Edge
++  Maximum Flow
++  Bipartite Matching
 
 📁 Hard_DP
-+  [Traveling Salesman Problem](https://github.com/ggyuchive/Advanced_Algorithm/blob/main/Hard_DP/TSP.cpp)
-+  State, Digit DP
++  [Bitmask DP](https://github.com/ggyuchive/Advanced_Algorithm/blob/main/Hard_DP/TSP.cpp)
++  Tree DP
++  Range DP
 
 
-📁 Querys
+📁 Query
 +  [Segment Tree](https://github.com/ggyuchive/Advanced_Algorithm/blob/main/Query/Segtree.cpp)
 +  [Lazy Segment Tree](https://github.com/ggyuchive/Advanced_Algorithm/blob/main/Query/LazySegtree.cpp)
-+  Mo's Algorithm
-+  [Sparse Table](https://github.com/ggyuchive/Advanced_Algorithm/blob/main/Query/SparseTree.cpp)
++  [Sparse Table](https://github.com/ggyuchive/Advanced_Algorithm/blob/main/Query/SparseTable.cpp)
 +  [LCA](https://github.com/ggyuchive/Advanced_Algorithm/blob/main/Query/LCA.cpp)
++  Mo's
++  Merge Sort Tree
 
 
 📁 Divide and Conquer Technique
 +  [Optimizing Numerical Power](https://github.com/ggyuchive/Advanced_Algorithm/blob/main/DivideConquerTech/Fast_Power.cpp)
 +  Optimizing Matrix Power
-+  Optimizing Dynamic Programming
+
+📁 String
++  [Trie](https://github.com/ggyuchive/Advanced_Algorithm/blob/main/String/Trie.cpp)
