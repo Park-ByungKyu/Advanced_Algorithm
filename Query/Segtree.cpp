@@ -1,56 +1,64 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 typedef long long ll;
-vector<ll> arr;
-vector<ll> tree;
 
-void update(int treeind, ll upd) {
-    tree[treeind] = upd;
-    while (treeind>1) {
-        if (!(treeind&1)) tree[treeind/2] = tree[treeind]+tree[treeind+1];
-        else tree[treeind/2] = tree[treeind]+tree[treeind-1];
-        treeind/=2;
+/*
+* Author: Byeonggyu Park
+* https://judge.yosupo.jp/problem/point_add_range_sum
+* Time: 249 ms, Memory: 23.42MB
+*/
+struct Seg {
+    vector<ll> arr; vector<ll> tree;
+    int n; int sz = 1;
+    ll INIT;
+    /*INIT -> sum: 0, min: LLONG_MAX/2, max: -LLONG_MAX/2*/
+    Seg(int n, ll ini) {
+        INIT = ini;
+        arr.resize(n, INIT);
+        tree.resize(n << 2, INIT);
+        while (sz < n) sz <<= 1;
     }
-    return;
-}
-
-ll query(int s, int e, int l, int r, int treeind) {
-    if (s <= l && r <= e) return tree[treeind];
-    if (e < l || r < s) return 0;
-    int m = (l+r)/2;
-    return query(s,e,l,m,2*treeind)+query(s,e,m+1,r,2*treeind+1);
-}
-
-int main() {
-    ios_base :: sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-
-    ll n, m, k;
-    cin >> n >> m >> k;
-    arr.resize(n,0);
-    tree.resize(4*n,0);
-
-    int startidx = 1;
-    while (startidx < n) {
-        startidx *= 2;
+    ll op(ll a, ll b) {
+        /*change to min(), max()*/
+        return a + b;
     }
-    
-    for (int i = 0; i < n; i++) {
-        cin >> arr[i];
-        update(startidx+i, arr[i]);
-    }
-    
-    ll a,b,c;
-    for (int i = 0; i < m+k; i++) {
-        cin >> a >> b >> c; b--;
-        if (a == 1) {
-            update(getindex(b,c,0,n-1,1));
-            arr[b] = c;
-        } else {
-            c--;
-            cout << query(b, c, 0, startidx-1, 1) << '\n';
+    /*update to arr[ind] = upd*/
+    void update(int ind, ll upd) {
+        arr[ind] = upd;
+        ind |= sz; tree[ind] = upd;
+        while (ind >>= 1) {
+            tree[ind] = op(tree[ind << 1], tree[ind << 1 | 1]);
         }
     }
-}  
+
+    ll query(int s, int e) {
+        s |= sz; e |= sz;
+        ll ret = INIT;
+        while (s <= e) {
+            if (s&1) ret = op(ret, tree[s++]);
+            if (~e&1) ret = op(ret, tree[e--]);
+            s>>=1; e>>=1; 
+        }
+        return ret;
+    }
+};
+
+int main() {
+    ios::sync_with_stdio(0),cin.tie(0);
+    int n, q; cin >> n >> q;
+    Seg seg(n, 0);
+    for (int i = 0; i < n; i++) {
+        cin >> seg.arr[i];
+        seg.update(i, seg.arr[i]);
+    }
+    for (int i = 0; i < q; i++) {
+        int op; cin >> op;
+        ll a, b; cin >> a >> b;
+        if (op == 0) {
+            seg.update(a, seg.arr[a]+b);
+        }
+        else {
+            cout << seg.query(a, b-1) << '\n';
+        }
+    }
+}
